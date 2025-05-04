@@ -98,70 +98,119 @@ int main()
     float superPoderUm = (float)populacaoUm + areaUm + pibUm + pontosTuristicosUm + pibcapUm + inversoDensidadeUm;
     float superPoderDois = (float)populacaoDois + areaDois + pibDois + pontosTuristicosDois + pibcapDois + inversoDensidadeDois;
 
-    // Desafio Super Trunfo - Países
-    // Tema 2 - Comparação das Cartas
-    // Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades.
-    // Siga os comentários para implementar cada parte do desafio.
+    printf("\n-------------------------------------\n");
+    printf("Comparação de cartas\n");
+    printf("-------------------------------------\n");
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    int opcao;
+    printf("\n========= Menu de Comparacao =========\n");
+    printf("1. Populacao\n");
+    printf("2. Area\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turisticos\n");
+    printf("5. Densidade Demografica\n");
+    printf("6. Super Poder\n");
+    printf("Escolha uma opcao: ");
+    scanf("%d", &opcao);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("\nComparando %s e %s\n", nomeCidadeUm, nomeCidadeDois);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    switch (opcao)
+    {
+    case 1:
+        printf("Populacao: %d x %d\n", populacaoUm, populacaoDois);
+        if (populacaoUm > populacaoDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (populacaoDois > populacaoUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    case 2:
+        printf("Area: %.2f km2 x %.2f km2\n", areaUm, areaDois);
+        if (areaUm > areaDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (areaDois > areaUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    printf("Populacao: %d x %d\n", populacaoUm, populacaoDois);
-    if (populacaoUm > populacaoDois) {
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (populacaoDois > populacaoUm) {
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+    case 3:
+        printf("PIB: %.2f bi x %.2f bi\n", pibUm, pibDois);
+        if (pibUm > pibDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (pibDois > pibUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
+
+    case 4:
+        printf("Pontos Turisticos: %d x %d\n", pontosTuristicosUm, pontosTuristicosDois);
+        if (pontosTuristicosUm > pontosTuristicosDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (pontosTuristicosDois > pontosTuristicosUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
+
+    case 5:
+        printf("Densidade Demografica: %.2f hab/km2 x %.2f hab/km2\n", densidadeUm, densidadeDois);
+        if (densidadeUm < densidadeDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (densidadeDois < densidadeUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
+
+    case 6:
+        printf("Super Poder: %.2d \n", superPoderUm, superPoderDois);
+        if (superPoderUm > superPoderDois)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeUm);
+        }
+        else if (superPoderDois > superPoderUm)
+        {
+            printf("A cidade vencedora é: %s\n", nomeCidadeDois);
+        }
+
+    default:
+        printf("Opcao invalida.\n");
     }
 
-    printf("Area: %.2f km2 x %.2f km2\n", areaUm, areaDois);
-    if (areaUm > areaDois){
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (areaDois > areaUm){ 
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
-    }
-
-    printf("PIB: %.2f bi x %.2f bi\n", pibUm, pibDois);
-    if (pibUm > pibDois){ 
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (pibDois > pibUm) {
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
-    }
-
-    printf("Pontos Turisticos: %d x %d\n", pontosTuristicosUm, pontosTuristicosDois);
-    if (pontosTuristicosUm > pontosTuristicosDois) { 
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (pontosTuristicosDois > pontosTuristicosUm){ 
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
-    } 
-    
-    printf("Densidade Demografica: %.2f hab/km2 x %.2f hab/km2\n", densidadeUm, densidadeDois);
-    if (densidadeUm < densidadeDois) { 
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (densidadeDois < densidadeUm) { 
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
-    }
-
-    printf("Super Poder: %.2d \n", superPoderUm, superPoderDois);
-    if (superPoderUm > superPoderDois) { 
-        printf("A cidade vencedora é: %s\n", nomeCidadeUm);
-    } else if (superPoderDois > superPoderUm) { 
-        printf("A cidade vencedora é: %s\n", nomeCidadeDois);
-    }
-    
-        return 0;
+    return 0;
 }
